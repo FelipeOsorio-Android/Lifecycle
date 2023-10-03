@@ -1,12 +1,11 @@
 package devandroid.felipe.lifecycle
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import devandroid.felipe.lifecycle.databinding.FragmentSecondBinding
 import devandroid.felipe.lifecycle.viewmodel.MainViewModel
 
@@ -20,7 +19,7 @@ class SecondFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val viewModel by viewModels<MainViewModel>()
+    private val viewModel by activityViewModels<MainViewModel>()
     private val textSecond by lazy { binding.textviewSecond }
 
     override fun onCreateView(

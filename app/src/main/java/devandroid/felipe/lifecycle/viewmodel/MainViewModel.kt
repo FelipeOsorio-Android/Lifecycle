@@ -9,7 +9,10 @@ class MainViewModel : ViewModel() {
     private val _counter = MutableLiveData(0)
     val counter: LiveData<Int> = _counter
 
+    var incrementBy = 1
+
     fun increment() {
-        _counter.value = _counter.value?.plus(1)
+        val number = _counter.value ?: 0
+        _counter.value = number + incrementBy
     }
 }
